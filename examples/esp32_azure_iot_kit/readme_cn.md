@@ -50,6 +50,7 @@ OLED 显示屏也是用 I2C 接口，且驱动也已开发完成，详细的驱�
 * 初始化submodules
 
     ```
+    cd esp-iot-solution
     git submodule update --init --recursive
     ```
     
@@ -59,39 +60,36 @@ OLED 显示屏也是用 I2C 接口，且驱动也已开发完成，详细的驱�
 * 设置 Set IOT_SOLUTION_PATH 环境变量
 
     ```
-    export IOT_SOLUTION_PATH=~/esp/esp-iot-solution
+    export IOT_SOLUTION_PATH=~/workspace/esp/esp-iot-solution
     ```
 
 
+### 运行
 
-
-
-
-## 运行示例项目
-
-### 设置示例项目路径 
-
-* Change the directory to example
-* choose one example project you want to run, we take smart_device here.
-* Change the directory to the example project under example directory, take smart_device example as example here:
+* 进入示例项目路径 
 
     ```
-    cd YOUR_IOT_SOLUTION_PATH/example/smart_device
+    cd $IOT_SOLUTION_PATH/example/esp32_azure_iot_kit
     ```
 
-* Run `make menuconfig` to set the project parameters in
+* 运行  `make menuconfig` 
 
     ```
-    make menuconfig --> IoT Example - smart_device
+    设置串口路径：/dev/cu.SLAB_USBtoUART
     ```
 
-* Run `make` to compile the project, or `make flash` to compile and flash the module.
+### 编译
+* 运行 `make` to compile the project, 
+
+
+### 编译&烧录
+* Run  `make flash` to compile and flash the module.
 
 
 
 
-### 2.3 运行
-下载完成之后可以按一下标号为 KEY_EN 的按键，开始运行。运行时可以看到 OLED 屏上显示了一些简单的图标，以及温湿度传感器和光照强度传感器的数据。
+### 烧录以后使用
+烧录之后可以按一下标号为 KEY_EN 的按键，开始运行。运行时可以看到 OLED 屏上显示了一些简单的图标，以及温湿度传感器和光照强度传感器的数据。
 
 按一下标号为 KEY_IO0 的按键可以切换数据显示页面，总共有 4 个页面：
 
