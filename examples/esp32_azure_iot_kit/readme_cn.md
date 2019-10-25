@@ -38,8 +38,57 @@ OLED 显示屏也是用 I2C 接口，且驱动也已开发完成，详细的驱�
 > 
 > 磁力计和气压计的驱动暂时没有进行实现，用户如果需要用到可参考其他传感器的驱动进行实现。
 
-### 2.2 编译下载
-请查看 [[readme]](./../../README.md#preparation)。
+### 下载
+
+
+* 下载项目
+
+    ```
+    git clone --recursive https://github.com/espressif/esp-iot-solution
+    ```
+
+* 初始化submodules
+
+    ```
+    git submodule update --init --recursive
+    ```
+    
+ 
+### 配置环境变量
+
+* 设置 Set IOT_SOLUTION_PATH 环境变量
+
+    ```
+    export IOT_SOLUTION_PATH=~/esp/esp-iot-solution
+    ```
+
+
+
+
+
+
+## 运行示例项目
+
+### 设置示例项目路径 
+
+* Change the directory to example
+* choose one example project you want to run, we take smart_device here.
+* Change the directory to the example project under example directory, take smart_device example as example here:
+
+    ```
+    cd YOUR_IOT_SOLUTION_PATH/example/smart_device
+    ```
+
+* Run `make menuconfig` to set the project parameters in
+
+    ```
+    make menuconfig --> IoT Example - smart_device
+    ```
+
+* Run `make` to compile the project, or `make flash` to compile and flash the module.
+
+
+
 
 ### 2.3 运行
 下载完成之后可以按一下标号为 KEY_EN 的按键，开始运行。运行时可以看到 OLED 屏上显示了一些简单的图标，以及温湿度传感器和光照强度传感器的数据。
